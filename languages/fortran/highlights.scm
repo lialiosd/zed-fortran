@@ -96,14 +96,14 @@
  "if"
  "then"
  "where"
- ] @conditional
+ ] @keyword.conditional
 
 [
  "do"
  "enddo"
  "forall"
  "while"
- ] @repeat
+ ] @keyword.repeat
 
 [
  "*"
@@ -195,3 +195,14 @@
 
 (derived_type_member_expression
   (type_member) @property)
+
+(select_case_statement ["select" "case" "selectcase"] @keyword.conditional)
+(end_select_statement ["end" "select" "endselect"] @keyword.conditional)
+(case_statement "case" @keyword.conditional)
+(case_statement (default) @keyword.conditional)
+(end_do_loop_statement ["end" "do" "enddo"] @keyword.repeat)
+(end_if_statement ["end" "if" "endif"] @keyword.conditional)
+(end_subroutine_statement ["end" "subroutine" "endsubroutine"] @keyword.function)
+(end_function_statement ["end" "function" "endfunction"] @keyword.function)
+(end_program_statement ["end" "program" "endprogram"] @keyword)
+(end_module_statement ["end" "module" "endmodule"] @keyword)
